@@ -224,7 +224,13 @@ a{
     background-color : $bg-page1;
 }
 
+.hidden{
+    display:none;
+}
 
+.show{
+    display:block;
+}
 //page body
 #food-overview-list{
     margin-left : auto;

@@ -80,7 +80,7 @@ export default {
 
             console.log('external');
 
-            this.fetchData(`http://115.139.45.137:1110/api/JSON/restaurant/overview?number=3${locationQuery ? locationQuery : ''}${classificationTypeQuery ? classificationTypeQuery : ''}`);
+            this.fetchData(`http://3.39.164.70:1110/api/JSON/restaurant/overview?number=3${locationQuery ? locationQuery : ''}${classificationTypeQuery ? classificationTypeQuery : ''}`);
         }
     },
     components:{

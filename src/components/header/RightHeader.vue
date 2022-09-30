@@ -1,8 +1,9 @@
 <template lang="">
     <div id="header-right-container">
-        <MyButton @click="loginBtnClick" v-bind:isNormal="true" myButtonName="로그인"></MyButton>
-        <LoginModal v-on:exitClick="exitClick" v-bind:isVisable="isVisable"></LoginModal>
-
+        <MyButton @click="loginBtnClick" v-bind:isNormal="true" myButtonName="로그인" v-bind:class="{'show': !user.isLogin, 'hidden': user.isLogin}"></MyButton>
+        <!-- <div v-bind:class="{'show': user.isLogin, 'hidden': !user.isLogin}">환영합니다!</div> -->
+        <MyButton @click="logoutBtnClick" v-bind:isNormal="true" myButtonName="로그아웃" v-bind:class="{'show': user.isLogin, 'hidden': !user.isLogin}"></MyButton>
+        <LoginModal v-on:exitClick="exitClick" v-bind:isVisable="isVisable" @loginSuccess="loginSuccess"></LoginModal>
     </div>
 </template>
 <script>
@@ -15,13 +16,21 @@ export default {
             isVisable:false
         }
     },
+    props:['user'],
     methods:{
         loginBtnClick(){
             console.log('test')
             this.isVisable= true;
         },
+        logoutBtnClick(){
+            window.location.href='./logout'
+            setTimeout
+        },
         exitClick(){
             this.isVisable = false;
+        },
+        loginSuccess(){
+            this.$emit('loginSuccess')
         }
     },
     components:{

@@ -1,6 +1,6 @@
 <template>
   <div v-bind:id="[this.screenMode ? 'dark-mode' : 'white-mode']">
-    <MainHeader v-on:screenModeChange="screenModeChange" link="/"></MainHeader>
+    <MainHeader v-on:screenModeChange="screenModeChange" v-bind:user="user" link="/" @loginSuccess="loginSuccess"></MainHeader>
     <router-view></router-view>
   </div>
 </template>
@@ -10,6 +10,10 @@
 export default {
   data(){
     return{
+      user:{
+        name:'',
+        isLogin : false
+      },
       screenMode : {
         type : Boolean
       }
@@ -29,6 +33,9 @@ export default {
               data = false;
       }
       return data;
+    },
+    loginSuccess(){
+      this.user.isLogin=true;
     }
   },
   created(){

@@ -12,7 +12,7 @@ class axiosUrlChange{
             result = `http://localhost:${this.proxyPort}/${url}`;
         }
         else{
-            result = `http://115.139.45.137:${this.proxyPort}/${url}`;
+            result = `http://3.39.164.70:${this.proxyPort}/${url}`;
         }
 
         return result;

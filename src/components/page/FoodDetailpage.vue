@@ -87,7 +87,7 @@ export default {
             baseUrl = 'http://localhost:1110/';
         }
         else{
-            baseUrl = 'http://115.139.45.137:1110/';
+            baseUrl = 'http://3.39.164.70:1110/';
         }
         
         let restaurantQuery = this.$route.params.id ? `restaurantId=${this.$route.params.id}` : '';

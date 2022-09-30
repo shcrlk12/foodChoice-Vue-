@@ -3,7 +3,7 @@
         <div id="main-header-container">
             <div>
                 <LeftHeader v-on:screenModeChange="screenModeChange" v-bind:link="link"></LeftHeader>
-                <RightHeader></RightHeader>
+                <RightHeader v-bind:user="user" @loginSuccess="loginSuccess"></RightHeader>
             </div>
             <div>
                 <LocationInput></LocationInput>
@@ -17,7 +17,7 @@ import LocationInput from '../header/LocationInput.vue';
 import RightHeader from '../header/RightHeader.vue';
 
 export default {
-    props:['link'],
+    props:['link', 'user'],
     components:{
         LeftHeader,
         LocationInput,
@@ -26,6 +26,9 @@ export default {
     methods:{
         screenModeChange(screenMode){
             this.$emit('screenModeChange', screenMode);
+        },
+        loginSuccess(){
+            this.$emit('loginSuccess')
         }
     }
 

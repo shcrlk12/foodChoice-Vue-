@@ -44,6 +44,7 @@ export default {
             .then(function(response) {
                 console.log(response)
                 vue.loginModalClose();
+                vue.$emit('loginSuccess');
             }).catch(()=>{
                 console.log('eerorr')
             })
