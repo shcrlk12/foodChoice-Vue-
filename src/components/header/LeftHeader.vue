@@ -2,7 +2,7 @@
     <div id="left-side-header">
         <h1>
             <router-link v-bind:to="this.link">
-                Food it !
+                Food it1 !
             </router-link>
         </h1>
         <div><i v-on:click="screenModeChange" class="fa fa-sun-o" v-bind:class="this.getClassName()" aria-hidden="true"></i></div>
