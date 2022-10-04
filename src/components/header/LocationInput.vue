@@ -13,6 +13,7 @@
 import KeywordBox from './KeywordBox'
 import axios from 'axios';
 import consVow from '../util/consonantVowelParse';
+import axiosUrlChange from '../util/axiosUrlChange';
 
 export default {
     data(){
@@ -30,16 +31,8 @@ export default {
         },
         fetchSimilarKeyword(url){
             const vue = this;
-            let baseUrl;
-        
-            if(window.location.href.includes('localhost')){
-                baseUrl = 'http://localhost:1110/';
-            }
-            else{
-                baseUrl = 'http://3.39.164.70:1110/';
-            }
 
-            axios.get(baseUrl + url)
+            axios.get(axiosUrlChange.currentLocationUrl(url))
             .then(function(response) {
                 let data = response.data;
 

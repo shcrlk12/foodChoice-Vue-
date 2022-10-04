@@ -103,6 +103,8 @@ export default {
 }
 </script>
 <style lang="scss">
+    @import "../../assets/main.scss";
+
     .login-modal{
         position: absolute;
         z-index : 2;
@@ -120,6 +122,14 @@ export default {
         }
 
         .modal-body {
+            .exit-btn{
+                margin-top : 10px;
+                span{
+                    float:right;
+                    margin-right : 20px;
+                    font-size:18px;
+                }
+            }
             position: absolute;
             top: 50%;
             left: 50%;
@@ -136,8 +146,28 @@ export default {
 
             transform: translateX(-50%) translateY(-50%);
             .modal-inner{
+                width : 250px;
+                margin-top : 70px;
+                margin-left: auto;
+                margin-right: auto;
+                
                 display:flex;
                 flex-direction: column;
+                gap : 20px 0px;
+                input{
+                    border : solid 1px black;
+                }
+                .id-input{
+                    @include w-center;
+                    padding : 0px, 5px;
+                }
+
+                .login-btn{
+                    button{
+                        float: right;
+                        margin-right : 40px;
+                    }
+                }
             }
         }
 

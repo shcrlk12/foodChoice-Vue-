@@ -80,30 +80,21 @@ export default {
       }
     },
     created(){
-
-        let baseUrl;
-        
-        if(window.location.href.includes('localhost')){
-            baseUrl = 'http://localhost:1110/';
-        }
-        else{
-            baseUrl = 'http://3.39.164.70:1110/';
-        }
         
         let restaurantQuery = this.$route.params.id ? `restaurantId=${this.$route.params.id}` : '';
-
+        
         //1. restuarant detail
-        this.fetchRestuarantDetail(`${baseUrl}api/JSON/restaurant/detail?${restaurantQuery}`);
+        this.fetchRestuarantDetail(axiosUrlChange.currentLocationUrl(`api/JSON/restaurant/detail?${restaurantQuery}`));
 
         //2. fetch menu
 
-        this.fetchData(`${baseUrl}api/JSON/restaurant/getMenus?${restaurantQuery}`);
+        this.fetchData(axiosUrlChange.currentLocationUrl(`api/JSON/restaurant/getMenus?${restaurantQuery}`));
 
         //3. fetch comment
         let offsetQuery = 'offset=0';
         let numberQuery = 'number=100';
 
-        this.fetchComment(`${baseUrl}api/JSON/restaurant/getComments?${restaurantQuery}&${offsetQuery}&${numberQuery}`)
+        this.fetchComment(axiosUrlChange.currentLocationUrl(`api/JSON/restaurant/getComments?${restaurantQuery}&${offsetQuery}&${numberQuery}`))
     },
     components:{
         MenuTable,

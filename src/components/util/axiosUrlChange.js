@@ -13,6 +13,8 @@ class axiosUrlChange{
         }
         else{
             result = `http://3.39.164.70:${this.proxyPort}/${url}`;
+            // aws : http://3.39.164.70
+            // test : http://115.139.45.137
         }
 
         return result;
