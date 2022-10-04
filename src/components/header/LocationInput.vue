@@ -56,7 +56,7 @@ export default {
         focusout(){
             setTimeout(() => {
                 this.similarKeywordListClear();
-            }, 10);
+            }, 300);
         },
         keyInput(e){
             let keyword = consVow.getConsonantVowel(e.target.value);

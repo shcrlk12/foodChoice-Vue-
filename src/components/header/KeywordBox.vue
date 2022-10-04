@@ -29,6 +29,7 @@ export default {
         z-index: 1;
         span{
             padding-left: 15px;
+            cursor: pointer;
         }
         
     }

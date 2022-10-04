@@ -128,6 +128,7 @@ export default {
                     float:right;
                     margin-right : 20px;
                     font-size:18px;
+                    cursor: pointer;
                 }
             }
             position: absolute;
